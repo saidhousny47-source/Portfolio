@@ -780,6 +780,20 @@
             font-weight: 500;
         }
 
+        .pdf-viewer-wrapper {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .tableau-pdf-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
         /* Grille langages */
         .tech-grid {
             display: grid;
@@ -935,23 +949,54 @@
         }
 
         /* Footer socials */
+        footer {
+            background: var(--dark);
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(108, 92, 231, 0.3);
+        }
+
         .footer-socials {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            margin-top: 0.8rem;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
         }
 
         .footer-icon {
-            color: #636e72;
-            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
             text-decoration: none;
+            transition: transform 0.3s;
+            color: #b2bec3;
+        }
+
+        .footer-icon i {
+            font-size: 1.8rem;
             transition: color 0.3s;
         }
 
-        .footer-icon:hover {
-            color: var(--primary);
+        .footer-icon span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
+
+        .footer-icon:hover {
+            transform: translateY(-4px);
+        }
+
+        .footer-gmail:hover i { color: #ea4335; }
+        .footer-gmail:hover span { color: #ea4335; }
+
+        .footer-linkedin:hover i { color: #0a66c2; }
+        .footer-linkedin:hover span { color: #0a66c2; }
+
+        .footer-github:hover i { color: #f0f6fc; }
+        .footer-github:hover span { color: #f0f6fc; }
 
         /* CSRF modal content */
         .csrf-content h4 {
@@ -1406,15 +1451,14 @@
             
             <div class="competences-container" data-aos="fade-up">
                 <div class="competences-tableau">
-                    <h3>Tableau de compétences BTS SIO SLAM</h3>
+                    <h3>Tableau de synthèse des réalisations professionnelles — Épreuve E5</h3>
                     <div class="tableau-container">
-                        <img src="images/tableau-competences.png" alt="Tableau de compétences BTS SIO SLAM" class="tableau-img">
+                        <div class="pdf-viewer-wrapper">
+                            <iframe src="tableau-synthese-e5.pdf" class="tableau-pdf-iframe" title="Tableau de synthèse E5"></iframe>
+                        </div>
                         <div class="tableau-actions">
-                            <a href="docs/tableau-competences.xlsx" class="btn-download-tableau" download>
-                                <i class="fas fa-download"></i> Télécharger le tableau Excel
-                            </a>
-                            <a href="images/tableau-competences.png" class="btn-download-tableau btn-secondary" download>
-                                <i class="fas fa-image"></i> Télécharger l'image
+                            <a href="tableau-synthese-e5.pdf" class="btn-download-tableau" download>
+                                <i class="fas fa-file-pdf"></i> Télécharger le tableau (PDF)
                             </a>
                         </div>
                     </div>
@@ -1650,8 +1694,6 @@
                     <ul>
                         <li><strong>Google Alertes</strong> : Je crée des alertes sur des mots-clés comme "cyberattaque", "faille sécurité", "CSRF", "ransomware" pour recevoir automatiquement les dernières actualités par email.</li>
                         <li><strong>Pearltrees</strong> : Organisation et classement de mes ressources web en collections thématiques (cybersécurité, développement web, BTS SIO).</li>
-                        <li><strong>Feedly</strong> : Agrégateur de flux RSS pour suivre les blogs et médias spécialisés en continu.</li>
-                        <li><strong>Reddit / Stack Overflow</strong> : Communautés techniques pour rester informé des discussions et bonnes pratiques.</li>
                     </ul>
                 </div>
 
@@ -1717,9 +1759,18 @@
         <div class="container">
             <p>&copy; 2026 Said HOUSNY - Portfolio BTS SIO SLAM - Lycée René Descartes</p>
             <div class="footer-socials">
-                <a href="mailto:saidhousny47@gmail.com" class="footer-icon" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/said-housny" target="_blank" class="footer-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/" target="_blank" class="footer-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:saidhousny47@gmail.com" class="footer-icon footer-gmail" title="saidhousny47@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.linkedin.com/in/said-housny" target="_blank" class="footer-icon footer-linkedin" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/" target="_blank" class="footer-icon footer-github" title="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
             </div>
         </div>
     </footer>
