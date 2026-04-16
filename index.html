@@ -916,6 +916,96 @@
             }
         }
 
+        .accueil-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn-download-alt {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--light);
+        }
+
+        .btn-download-alt:hover {
+            background: var(--primary);
+        }
+
+        /* Footer socials */
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .footer-icon {
+            color: #636e72;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-icon:hover {
+            color: var(--primary);
+        }
+
+        /* CSRF modal content */
+        .csrf-content h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin: 1.2rem 0 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .csrf-content p {
+            color: #b2bec3;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 0.4rem;
+        }
+        .csrf-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(108,92,231,0.08);
+            border-left: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-bottom: 0.8rem;
+        }
+        .csrf-step strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .csrf-content code {
+            background: rgba(0,206,201,0.12);
+            color: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -1205,16 +1295,18 @@
         <div class="container">
             <div class="accueil-content" data-aos="fade-up">
                 <div class="profile-section">
-                    <div class="profile-photo">
-                        <img src="images/photo-profil.jpg" alt="Said Housny">
-                    </div>
                     <div class="profile-text">
                         <h1>Said HOUSNY</h1>
                         <h2>Étudiant en BTS SIO option SLAM</h2>
                         <p>Lycée René Descartes - Passionné par le développement et les nouvelles technologies.</p>
-                        <a href="docs/CV-Said-Housny.pdf" class="btn-download" download>
-                            <i class="fas fa-download"></i> Télécharger mon CV
-                        </a>
+                        <div class="accueil-btns">
+                            <a href="docs/CV-Said-Housny.pdf" class="btn-download" download>
+                                <i class="fas fa-download"></i> Télécharger mon CV
+                            </a>
+                            <a href="docs/tableau-synthese-e5.pdf" class="btn-download btn-download-alt" download>
+                                <i class="fas fa-file-pdf"></i> Tableau de synthèse E5
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1338,23 +1430,18 @@
                             <div class="tech-bar"><div class="tech-progress" style="width:85%"></div></div>
                         </div>
                         <div class="tech-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-logo">
-                            <span class="tech-name">CSS3</span>
-                            <div class="tech-bar"><div class="tech-progress" style="width:75%"></div></div>
-                        </div>
-                        <div class="tech-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-logo">
                             <span class="tech-name">PHP</span>
                             <div class="tech-bar"><div class="tech-progress" style="width:70%"></div></div>
                         </div>
                         <div class="tech-card">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-logo">
-                            <span class="tech-name">Java</span>
-                            <div class="tech-bar"><div class="tech-progress" style="width:65%"></div></div>
-                        </div>
-                        <div class="tech-card">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
                             <span class="tech-name">JavaScript</span>
+                            <div class="tech-bar"><div class="tech-progress" style="width:60%"></div></div>
+                        </div>
+                        <div class="tech-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                            <span class="tech-name">Python</span>
                             <div class="tech-bar"><div class="tech-progress" style="width:60%"></div></div>
                         </div>
                         <div class="tech-card">
@@ -1421,7 +1508,7 @@
                         </div>
                         <h3>Site du Club de Basket de Dammarie-les-Lys</h3>
                         <p>Création du site internet du club de basket de Dammarie-les-Lys durant mon premier stage BTS. Présentation du club, des équipes, des actualités et gestion des informations sportives.</p>
-                        <a href="#" class="btn-projet" data-projet="3"><i class="fas fa-eye"></i> Voir le projet</a>
+                        <a href="https://dammarie-basket.fr/" target="_blank" class="btn-projet"><i class="fas fa-external-link-alt"></i> Voir le projet</a>
                     </div>
                 </div>
 
@@ -1438,7 +1525,7 @@
                         </div>
                         <h3>Site Web – Stage Attal Mokrane</h3>
                         <p>Développement d'un site web réalisé lors de mon deuxième stage BTS chez Attal Mokrane. Conception et mise en œuvre d'une solution web adaptée aux besoins du client.</p>
-                        <a href="#" class="btn-projet" data-projet="4"><i class="fas fa-eye"></i> Voir le projet</a>
+                        <a href="https://monclikandcollect.vercel.app" target="_blank" class="btn-projet"><i class="fas fa-external-link-alt"></i> Voir le projet</a>
                     </div>
                 </div>
 
@@ -1483,37 +1570,52 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-right">Certifications</h2>
             <div class="certif-grid">
+                <!-- PIX -->
                 <div class="certif-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certif-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="certif-icon" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
+                        <i class="fas fa-star"></i>
                     </div>
                     <div class="certif-body">
                         <h3>PIX</h3>
                         <span class="certif-org">Plateforme nationale PIX</span>
-                        <p>Certification des compétences numériques : traitement de données, collaboration en ligne, sécurité numérique.</p>
+                        <p>Certification nationale des compétences numériques : traitement de données, collaboration en ligne et sécurité numérique.</p>
                         <span class="certif-badge">Obtenue</span>
                     </div>
                 </div>
+                <!-- Cisco -->
                 <div class="certif-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="certif-icon">
+                    <div class="certif-icon" style="background: linear-gradient(135deg, #0066cc, #00a0d1);">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <div class="certif-body">
                         <h3>Cisco Introduction to Cybersecurity</h3>
                         <span class="certif-org">Cisco Networking Academy</span>
-                        <p>Initiation à la cybersécurité : menaces, vulnérabilités et bonnes pratiques de protection des systèmes.</p>
-                        <span class="certif-badge">Obtenue</span>
+                        <p>Initiation à la cybersécurité : menaces, vulnérabilités et bonnes pratiques de protection des systèmes d'information.</p>
+                        <span class="certif-badge certif-pending">En cours</span>
                     </div>
                 </div>
+                <!-- Python -->
                 <div class="certif-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="certif-icon">
-                        <i class="fas fa-globe"></i>
+                    <div class="certif-icon" style="background: linear-gradient(135deg, #3776ab, #ffd43b);">
+                        <i class="fab fa-python"></i>
                     </div>
                     <div class="certif-body">
-                        <h3>TOEIC</h3>
-                        <span class="certif-org">ETS Global</span>
-                        <p>Test of English for International Communication — évaluation des compétences en anglais professionnel.</p>
+                        <h3>Python : des fondamentaux aux concepts avancés</h3>
+                        <span class="certif-org">OpenClassrooms / PCEP</span>
+                        <p>Maîtrise des fondamentaux du langage Python jusqu'aux concepts avancés : POO, gestion des exceptions, modules et fichiers.</p>
                         <span class="certif-badge certif-pending">En cours</span>
+                    </div>
+                </div>
+                <!-- JavaScript W3Schools -->
+                <div class="certif-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="certif-icon" style="background: linear-gradient(135deg, #f0db4f, #e8a217);">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="certif-body">
+                        <h3>Basic JavaScript</h3>
+                        <span class="certif-org">W3Schools</span>
+                        <p>Certification des bases du langage JavaScript : variables, fonctions, DOM, événements et manipulation de données côté client.</p>
+                        <span class="certif-badge">Obtenue</span>
                     </div>
                 </div>
             </div>
@@ -1528,38 +1630,36 @@
                 <div class="veille-intro">
                     <h3>Qu'est-ce que la veille technologique ?</h3>
                 </div>
-                
+
                 <div class="veille-definition" data-aos="fade-up" data-aos-delay="100">
                     <h4><i class="fas fa-search"></i> Définition</h4>
                     <p>La <strong>veille technologique</strong> est un processus continu et systématique de collecte, d'analyse et de diffusion d'informations sur les évolutions technologiques dans un domaine spécifique. Elle permet de :</p>
                     <ul>
                         <li>Anticiper les évolutions du marché et des technologies</li>
                         <li>Identifier les innovations et les tendances émergentes</li>
-                        <li>Surveiller les concurrents et leurs avancées technologiques</li>
+                        <li>Surveiller les avancées technologiques du secteur</li>
                         <li>Détecter les opportunités et les menaces potentielles</li>
                         <li>Maintenir ses compétences à jour dans un domaine en constante évolution</li>
                     </ul>
-                    <p>Pour un professionnel de l'informatique, la veille technologique est essentielle car le secteur évolue très rapidement. De nouveaux langages de programmation, frameworks, outils et méthodologies apparaissent régulièrement.</p>
+                    <p>Pour un professionnel de l'informatique, la veille est indispensable : de nouveaux langages, frameworks et outils apparaissent en permanence. Ma veille est centrée sur la <strong>cybersécurité</strong>, notamment la montée en puissance des cyberattaques.</p>
                 </div>
 
                 <div class="veille-definition" data-aos="fade-up" data-aos-delay="200">
-                    <h4><i class="fas fa-tools"></i> Les outils de veille</h4>
-                    <p>Pour effectuer une veille efficace, plusieurs outils peuvent être utilisés :</p>
+                    <h4><i class="fas fa-filter"></i> Outils de curation utilisés</h4>
+                    <p>La curation consiste à sélectionner, filtrer et organiser les informations pertinentes collectées lors de la veille. J'utilise les outils suivants :</p>
                     <ul>
-                        <li><strong>Pearltrees</strong> : Organisation et partage de contenus web</li>
-                        <li><strong>Feedly</strong> : Agrégateur de flux RSS</li>
-                        <li><strong>Google Alerts</strong> : Alertes sur des mots-clés spécifiques</li>
-                        <li><strong>Twitter/X</strong> : Suivi des experts et actualités tech</li>
-                        <li><strong>Reddit</strong> : Communautés techniques spécialisées</li>
-                        <li><strong>Stack Overflow</strong> : Questions/réponses techniques</li>
+                        <li><strong>Google Alertes</strong> : Je crée des alertes sur des mots-clés comme "cyberattaque", "faille sécurité", "CSRF", "ransomware" pour recevoir automatiquement les dernières actualités par email.</li>
+                        <li><strong>Pearltrees</strong> : Organisation et classement de mes ressources web en collections thématiques (cybersécurité, développement web, BTS SIO).</li>
+                        <li><strong>Feedly</strong> : Agrégateur de flux RSS pour suivre les blogs et médias spécialisés en continu.</li>
+                        <li><strong>Reddit / Stack Overflow</strong> : Communautés techniques pour rester informé des discussions et bonnes pratiques.</li>
                     </ul>
                 </div>
 
                 <div class="pearltrees-container" data-aos="fade-up" data-aos-delay="300">
-                    <h4><i class="fas fa-tree"></i> Ma Veille sur Pearltrees</h4>
-                    <p>J'utilise Pearltrees pour organiser et centraliser ma veille technologique. Vous y trouverez les articles, ressources et informations que je collecte sur les sujets qui m'intéressent dans le domaine de l'informatique.</p>
-                    <a href="[pearltrees.com](https://www.pearltrees.com/zzzhousny)" target="_blank" class="btn-pearltrees">
-                        <i class="fas fa-external-link-alt"></i> Accéder à mon Pearltrees
+                    <h4><i class="fas fa-tree"></i> Ma Veille sur Pearltrees — Puissance des Cyberattaques</h4>
+                    <p>J'utilise Pearltrees pour organiser et centraliser ma veille technologique. Ma collection porte sur la montée en puissance des cyberattaques : ransomwares, attaques CSRF, phishing et protection des systèmes d'information.</p>
+                    <a href="https://www.pearltrees.com/zzzhousny/puissance-cyberattaques/id103242743" target="_blank" class="btn-pearltrees">
+                        <i class="fas fa-external-link-alt"></i> Accéder à ma veille Pearltrees
                     </a>
                 </div>
             </div>
@@ -1615,7 +1715,12 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Said HOUSNY - Portfolio BTS SIO SLAM - Lycée René Descartes</p>
+            <p>&copy; 2026 Said HOUSNY - Portfolio BTS SIO SLAM - Lycée René Descartes</p>
+            <div class="footer-socials">
+                <a href="mailto:saidhousny47@gmail.com" class="footer-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/said-housny" target="_blank" class="footer-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/" target="_blank" class="footer-icon" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -1688,25 +1793,16 @@
                 title: "Application CVVEN",
                 images: ["images/cvven-1.jpg", "images/cvven-2.jpg"],
                 description: "Application web développée en groupe permettant de réserver des logements pour l'Éducation nationale. J'ai travaillé sur la recherche, la réservation et l'interface utilisateur. Projet réalisé en équipe dans le cadre du BTS SIO SLAM.",
-                technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"]
+                technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+                link: null
             },
             2: {
                 title: "TP CSRF - Cybersécurité",
-                images: ["images/csrf-1.jpg", "images/csrf-2.jpg"],
-                description: "Travaux pratiques sur les attaques CSRF (Cross-Site Request Forgery). Configuration d'une machine virtuelle en réseau interne connectée à un PfSense, création d'un formulaire index.php vulnérable et d'un submit.php. Démonstration d'une attaque par usurpation d'identité via URL, puis mise en place d'une protection par token de session pour contrer l'attaque.",
-                technologies: ["PHP", "Linux", "PfSense", "VirtualBox", "Cybersécurité"]
-            },
-            3: {
-                title: "Site Club de Basket de Dammarie-les-Lys",
-                images: ["images/basket-1.jpg", "images/basket-2.jpg"],
-                description: "Création du site internet du club de basket de Dammarie-les-Lys réalisée durant mon premier stage BTS. Le site présente le club, ses équipes, ses actualités et ses informations sportives. Projet complet de conception à la mise en ligne.",
-                technologies: ["HTML", "CSS", "JavaScript"]
-            },
-            4: {
-                title: "Site Web – Stage Attal Mokrane",
-                images: ["images/attal-1.jpg", "images/attal-2.jpg"],
-                description: "Développement d'un site web réalisé lors de mon deuxième stage BTS chez Attal Mokrane. Conception et mise en œuvre d'une solution web adaptée aux besoins du client, incluant la gestion du contenu et l'interface utilisateur.",
-                technologies: ["HTML", "PHP", "MySQL", "CSS"]
+                images: [],
+                description: "",
+                csrfContent: true,
+                technologies: ["PHP", "Linux", "PfSense", "VirtualBox", "Cybersécurité"],
+                link: "docs/TP_1_CSRF_Said_Housny.pdf"
             }
         };
 
@@ -1716,25 +1812,75 @@
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const projetId = btn.getAttribute('data-projet');
+                if (!projetId) return;
                 const projet = projetsData[projetId];
-                
+                if (!projet) return;
+
                 modalTitle.textContent = projet.title;
-                modalDescription.textContent = projet.description;
-                
-                carouselInner.innerHTML = projet.images.map(img => 
-                    `<img src="${img}" alt="Image projet">`
-                ).join('');
-                
-                carouselIndicators.innerHTML = projet.images.map((_, i) => 
-                    `<span class="${i === 0 ? 'active' : ''}" data-index="${i}"></span>`
-                ).join('');
-                
-                projectTechnologies.innerHTML = projet.technologies.map(tech => 
+
+                // Contenu spécial CSRF
+                if (projet.csrfContent) {
+                    carouselInner.innerHTML = '';
+                    carouselIndicators.innerHTML = '';
+                    document.querySelector('.carousel-container').style.display = 'none';
+                    modalDescription.innerHTML = `
+                        <div class="csrf-content">
+                            <h4><i class="fas fa-info-circle"></i> Objectif du TP</h4>
+                            <p>Comprendre et démontrer les attaques CSRF (Cross-Site Request Forgery) dans un environnement contrôlé, puis mettre en place une contre-mesure efficace.</p>
+
+                            <h4><i class="fas fa-list-ol"></i> Étapes réalisées</h4>
+                            <div class="csrf-step">
+                                <span class="step-num">1</span>
+                                <div>
+                                    <strong>Configuration de la machine virtuelle</strong>
+                                    <p>Configuration en réseau interne pour connexion au PfSense (VMDeveloppeur-TPcsrf-debut, Debian 64-bit, 2857 Mo RAM).</p>
+                                </div>
+                            </div>
+                            <div class="csrf-step">
+                                <span class="step-num">2</span>
+                                <div>
+                                    <strong>Création des fichiers PHP vulnérables</strong>
+                                    <p><code>index.php</code> : formulaire HTML (nom + email) envoyé en GET vers submit.php.<br>
+                                    <code>submit.php</code> : affichage des paramètres reçus via <code>$_GET['fullname']</code> et <code>$_GET['email']</code>.</p>
+                                </div>
+                            </div>
+                            <div class="csrf-step">
+                                <span class="step-num">3</span>
+                                <div>
+                                    <strong>Démonstration de l'attaque CSRF</strong>
+                                    <p>Un usurpateur forge une URL malveillante : <code>submit.php?fullname=Usurpateur&email=exec(mkfs.ext4 /dev/sdb1)</code> permettant d'injecter des données arbitraires sans passer par le formulaire.</p>
+                                </div>
+                            </div>
+                            <div class="csrf-step">
+                                <span class="step-num">4</span>
+                                <div>
+                                    <strong>Protection par token de session</strong>
+                                    <p>Ajout d'un token CSRF généré côté serveur et vérifié à chaque soumission. Résultat : <em>"Erreur : vous n'êtes pas reconnu dans la bonne session."</em> pour toute requête forgée.</p>
+                                </div>
+                            </div>
+
+                            <a href="docs/TP_1_CSRF_Said_Housny.pdf" class="btn-download-tableau" download style="margin-top:1.5rem; display:inline-flex;">
+                                <i class="fas fa-file-pdf"></i>&nbsp; Télécharger le TP complet (PDF)
+                            </a>
+                        </div>
+                    `;
+                } else {
+                    document.querySelector('.carousel-container').style.display = '';
+                    carouselInner.innerHTML = projet.images.map(img =>
+                        `<img src="${img}" alt="Image projet">`
+                    ).join('');
+                    carouselIndicators.innerHTML = projet.images.map((_, i) =>
+                        `<span class="${i === 0 ? 'active' : ''}" data-index="${i}"></span>`
+                    ).join('');
+                    modalDescription.innerHTML = `<p>${projet.description}</p>`;
+                    currentSlide = 0;
+                    updateCarousel();
+                }
+
+                projectTechnologies.innerHTML = projet.technologies.map(tech =>
                     `<span>${tech}</span>`
                 ).join('');
-                
-                currentSlide = 0;
-                updateCarousel();
+
                 modal.classList.add('active');
             });
         });
